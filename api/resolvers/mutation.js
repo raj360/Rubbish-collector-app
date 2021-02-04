@@ -1,3 +1,26 @@
+const fs = require('fs');
+const path = require('path');
+
+
+const storeFS =async ({ stream, filename }) => {
+    const uploadDir = '../public/images/';
+    filename = `${Date.now()}-${filename.toLowerCase() }`
+    const fileName = path.join(__dirname,uploadDir,filename);
+
+    return await new Promise((resolve, reject) =>
+        stream.on('error', error => {
+                if (stream.truncated) // delete the truncated file
+                  fs.unlinkSync(fileName);
+                  reject(error);
+            })
+            .pipe(fs.createWriteStream(fileName))
+            .on('error', error => reject(error))
+            .on('finish', () => resolve({ filename }))
+    );
+}
+
+
+
 module.exports = {
   test:()=> 'Testing ',
   userSignUp:async (parent,{firstName,lastName,email,password},{models})=> await models.user.create({firstName,lastName,email,password}),
@@ -22,7 +45,24 @@ module.exports = {
     return collector;
 
   },
-makeAppointment:async (parent,{userId,collectorId},{models})=> await models.appointment.create({userId,collectorId}),
+
+  userCreateAppointment:async (parent,{userId,collectorId,image,},{models})=> {
+
+const appointment = await models.appointment.create({userId,collectorId});
+
+const {filename,createReadStream} = await image;
+
+const streat =createReadStream();
+
+const result = await storeFS({filename,streat});
+
+const imageUrl = result.filename;
+
+const service = await models.service.create({appointmentId:appointment.id,imageUrl});
+
+return appointment;
+
+},
 
 
 
