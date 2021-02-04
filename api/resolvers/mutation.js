@@ -25,7 +25,7 @@ const storeFS =async ({ stream, filename }) => {
 module.exports = {
   test:()=> 'Testing ',
 
-  userSignUp:async (parent,{firstName,lastName,email,password},{models})=> await models.user.create({firstName,lastName,email,password}),
+  userSignUp:async (parent,{firstName,lastName,telephone,email,password},{models})=> await models.user.create({firstName,lastName,email,password,telephone}),
   userSignIn:async (parent,{email,telephone,password},{models})=> await models.user.findOne({$or:[{email,password},{telephone,password}]}),
   collectorSignUp:async (parent,{firstName,lastName,email,telephone,password},{models})=> await models.collector.create({$or:[{firstName,lastName,email,telephone,password}]}),
   collectorSignIn:async (parent,{email,telephone,password})=> await models.collector.fidOne({$or:[{email,password},{telephone,password}]}),
@@ -79,5 +79,8 @@ collectorAddProfilePicture: async (parent,{userId,image},{model}) =>{
   const imageUrl = result.filename;
   return await model.collector.update({imageUrl},{where:{id:userId}})
 },
+
+
+
 
 }

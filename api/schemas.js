@@ -4,23 +4,22 @@ module.exports = gql`
 scalar DateTime
 
 type Query{
-  test:String
+  test:String!
 }
 
 type Mutation{
-  test:String
-  userSignUp(firstName:String,lastName:String,email:String,password:String):User!
-  userSignIn(email:String,telephone:String,password:String):User
-  collectorSignUp(firstName:String,lastName:String,email:String):Collector!
-  collectorSignIn(email:String,telephone:String,password:String):Collector!
-  updateUser(userId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float):User
-  updateCollector(collectorId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float,numberPlate:String):Collector
-  userCreateAppointment(userId:Int,image:Upload!):Appointment
-  collectorUpdateAppointment(collectorId:Int,appointmentId:Int):Appointment
-  userAddProfilePicture(userId:Int,image:Upload!):User
-  collectorAddProfilePicture(collectorId:Int,image:Upload!):Collector
+  test:String!
+  userSignUp(firstName:String!,lastName:String!,telephone:String!,email:String!,password:String!):User!
+  userSignIn(email:String!,telephone:String!,password:String!):User
+  collectorSignUp(firstName:String!,lastName:String!,email:String!):Collector!
+  collectorSignIn(email:String!,telephone:String!,password:String!):Collector!
+  updateUser(userId:Int!,telephone:String!,district:String!,city:String!,longitude:Float,latitude:Float):User
+  updateCollector(collectorId:Int!,telephone:String!,district:String!,city:String!,longitude:Float,latitude:Float,numberPlate:String!):Collector!
+  userCreateAppointment(userId:Int!,collectorId:Int!,image:Upload!):Appointment!
+  collectorUpdateAppointment(collectorId:Int!,appointmentId:Int!):Appointment!
+  userAddProfilePicture(userId:Int!,image:Upload!):User!
+  collectorAddProfilePicture(collectorId:Int!,image:Upload!):Collector!
 }
-
 
 type User{
   id:Int!
@@ -66,8 +65,8 @@ type Appointment{
 
 type Location{
   id:Int!
-  latitude:String!
-  longitude:String!
+  latitude:Float!
+  longitude:Float!
   district:String!
   city:String!
 }
