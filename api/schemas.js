@@ -15,7 +15,10 @@ type Mutation{
   collectorSignIn(email:String,telephone:String,password:String):Collector!
   updateUser(userId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float):User
   updateCollector(collectorId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float,numberPlate:String):Collector
-  userCreateAppointment(userId:Int,collectorId:Int!,image:Upload!):Appointment
+  userCreateAppointment(userId:Int,image:Upload!):Appointment
+  collectorUpdateAppointment(collectorId:Int,appointmentId:Int):Appointment
+  userAddProfilePicture(userId:Int,image:Upload!):User
+  collectorAddProfilePicture(collectorId:Int,image:Upload!):Collector
 }
 
 

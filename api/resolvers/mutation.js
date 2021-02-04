@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 
+
 const storeFS =async ({ stream, filename }) => {
     const uploadDir = '../public/images/';
     filename = `${Date.now()}-${filename.toLowerCase() }`
@@ -23,6 +24,7 @@ const storeFS =async ({ stream, filename }) => {
 
 module.exports = {
   test:()=> 'Testing ',
+
   userSignUp:async (parent,{firstName,lastName,email,password},{models})=> await models.user.create({firstName,lastName,email,password}),
   userSignIn:async (parent,{email,telephone,password},{models})=> await models.user.findOne({$or:[{email,password},{telephone,password}]}),
   collectorSignUp:async (parent,{firstName,lastName,email,telephone,password},{models})=> await models.collector.create({$or:[{firstName,lastName,email,telephone,password}]}),
@@ -45,10 +47,9 @@ module.exports = {
     return collector;
 
   },
+userCreateAppointment:async (parent,{userId,image,},{models})=> {
 
-  userCreateAppointment:async (parent,{userId,collectorId,image,},{models})=> {
-
-const appointment = await models.appointment.create({userId,collectorId});
+const appointment = await models.appointment.create({userId});
 
 const {filename,createReadStream} = await image;
 
@@ -63,8 +64,20 @@ const service = await models.service.create({appointmentId:appointment.id,imageU
 return appointment;
 
 },
-
-
-
+collectorUpdateAppointment:async (parent,{collectorId,appointmentId},{models}) =>await models.collector.update({collectorId,status:'ACCEPTED'},{where:{appointmentId}}),
+userAddProfilePicture: async (parent,{userId,image},{model}) =>{
+  const {filename,createReadStream} = await image;
+  const stream  = createReadStream();
+  const result = await storeFS({filename,stream});
+  const imageUrl = result.filename;
+  return await model.user.update({imageUrl},{where:{id:userId}})
+},
+collectorAddProfilePicture: async (parent,{userId,image},{model}) =>{
+  const {filename,createReadStream} = await image;
+  const stream  = createReadStream();
+  const result = await storeFS({filename,stream});
+  const imageUrl = result.filename;
+  return await model.collector.update({imageUrl},{where:{id:userId}})
+},
 
 }
