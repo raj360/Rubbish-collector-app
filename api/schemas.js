@@ -9,10 +9,14 @@ type Query{
 
 type Mutation{
   test:String
-  userSignUp(firstName:String,LastName:String,email:String,password:String):User!
+  userSignUp(firstName:String,lastName:String,email:String,password:String):User!
   userSignIn(email:String,telephone:String,password:String):User
+  collectorSignUp(firstName:String,lastName:String,email:String):Collector!
+  collectorSignIn(email:String,telephone:String,password:String):Collector!
+  updateUser(userId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float):User
+  updateCollector(collectorId:Int!,telephone:String,district:String,city:String,longitude:Float,latitude:Float,numberPlate:String):Collector
+  makeAppointment(userId:Int,collectorId:Int):Appointment
 }
-
 
 type User{
   id:Int!
