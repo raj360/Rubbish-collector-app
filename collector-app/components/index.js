@@ -8,6 +8,8 @@ import Switch from './Switch';
 import Select from './Select';
 import RequestCollector from './RequestCollector';
 import ServiceCard from './ServiceCard';
+import RecentActivities from './RecentActivities';
+import ServiceCardSmall from './SeriviceCardSmall';
 
 
 export {
@@ -20,5 +22,7 @@ export {
   Switch, 
   Select,
   RequestCollector,
-  ServiceCard
+  ServiceCard,
+  RecentActivities,
+  ServiceCardSmall
 };

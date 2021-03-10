@@ -6,30 +6,30 @@ import {Button} from '../components';
 
 
 
-const ServiceCard = () => {
+const ServiceCardSmall = () => {
   return (
     <Block  column card style={styles.container} >
       <Block> 
         <TouchableOpacity>
           <Block right >
-          <Text size={16} style={styles.close}>X</Text>
+          <Text size={14} style={styles.close}>X</Text>
         </Block>
         </TouchableOpacity>
        <Image source={Images.ProfileBackground} style={styles.image}  />
       </Block>
 
       <Block style={styles.details} >
-        <Text style={styles.text}>Name:</Text>
-        <Text style={styles.text}>Email:</Text>   
-        <Text style={styles.text}>District:</Text>   
-        <Text style={styles.text}>Town:</Text>   
-        <Text style={styles.text}>Street:</Text>   
-        <Text style={styles.text}>Telephone:</Text>   
+        <Text size={12} style={styles.text}>Name: </Text>
+        <Text size={12} style={styles.text}>Email:</Text>   
+        <Text size={12} style={styles.text}>District:</Text>   
+        <Text size={12} style={styles.text}>Town:</Text>   
+        <Text size={12} style={styles.text}>Street:</Text>   
+        <Text size={12} style={styles.text}>Telephone:</Text>   
       </Block>
       
       <Block right style={{marginBottom:-10,marginRight:-5}}>
         <Button small>
-          confirm
+          view
         </Button>
       </Block>
     
@@ -37,21 +37,21 @@ const ServiceCard = () => {
   )
 }
 
-export default ServiceCard
+export default ServiceCardSmall;
 
 const styles = StyleSheet.create({
   container:{
     elevation:3,
     borderRadius:10,
-    padding:20,
-    width:200,
+    padding:10,
+    width:180,
     margin:5
   },
   image:{
-    width:90,
-    height:90,
+    width:60,
+    height:60,
     borderRadius:50,
-    marginTop:-40
+    marginTop:-25
   },
   text:{
      color:argonTheme.COLORS.PRIMARY
@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   },close:{
     backgroundColor:argonTheme.COLORS.PRIMARY,
     color:argonTheme.COLORS.WHITE,
-    padding:10,
+    padding:5,
     borderRadius:50,
-    marginTop: -5,
-    width: 40,
-    paddingLeft:15
+    marginTop: 0,
+    width: 30,
+    paddingLeft:10
   }
 })

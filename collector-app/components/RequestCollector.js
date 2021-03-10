@@ -1,9 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image,TouchableOpacity} from 'react-native';
 import {Block,Text,Theme,Button} from 'galio-framework';
-
 import {Images,argonTheme} from '../constants'
-
 
 const RequestCollector = () => {
   return (
