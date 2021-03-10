@@ -30,12 +30,16 @@ class Onboarding extends React.Component {
         </Block>
         <Block flex space="between" style={styles.padded}>
             <Block flex space="around" style={{ zIndex: 2 }}>
-              <Block style={styles.title}>
+                <Block style={styles.title}>
                 <Block>
                 </Block>
-                <Block>
+                <Block  column style={{marginBottom:10}} >
                   <Text color={argonTheme.COLORS.PRIMARY} size={60} >
                     Kasasiro
+                  </Text>
+
+                  <Text  color={argonTheme.COLORS.PRIMARY} size={30}>
+                    for clients
                   </Text>
                 </Block>
                 <Block style={styles.subTitle}>

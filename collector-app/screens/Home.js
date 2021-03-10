@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Block, theme } from 'galio-framework';
-
-import { Card,RequestCollector} from '../components';
+import { Block, theme,Text } from 'galio-framework';
+import { Card,RequestCollector, ServiceCard,Button} from '../components';
 import articles from '../constants/articles';
+import {argonTheme} from '../constants';
 
 const { width } = Dimensions.get('screen');
 
@@ -14,8 +14,15 @@ class Home extends React.Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
-          <RequestCollector/>
-          {/* <Card item={articles[0]}   /> mini small  */}
+           
+           <ServiceCard/>
+
+          <Block center style={{marginTop:theme.SIZES.BASE}} >
+                <Button style={styles.button} >
+                  <Text style={{color:argonTheme.COLORS.WHITE}}>See more</Text>
+                </Button>
+          </Block>
+
           <Block flex row>
             <Card item={articles[1]} style={styles.cards}  />
             <Card item={articles[2]} styles={styles.cards} />
@@ -52,6 +59,10 @@ const styles = StyleSheet.create({
   },
   cards:{
       marginRight: theme.SIZES.BASE 
+  },
+  button: {
+      borderRadius:50,
+
   }
 });
 

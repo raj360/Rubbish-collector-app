@@ -7,6 +7,7 @@ import Input from './Input';
 import Switch from './Switch';
 import Select from './Select';
 import RequestCollector from './RequestCollector';
+import ServiceCard from './ServiceCard';
 
 
 export {
@@ -18,5 +19,6 @@ export {
   Header,
   Switch, 
   Select,
-  RequestCollector
+  RequestCollector,
+  ServiceCard
 };
