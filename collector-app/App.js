@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Image } from "react-native";
 import AppLoading from 'expo-app-loading';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 import { useFonts } from '@use-expo/font';
 import { Asset } from "expo-asset";
 import { Block, GalioProvider } from "galio-framework";
@@ -9,15 +9,11 @@ import { NavigationContainer } from "@react-navigation/native";
 
 // const {latitude,longitude} = coords;
 
+
 // Before rendering any navigation stack
 import { enableScreens } from "react-native-screens";
 enableScreens();
 
-// Initialize Apollo Client
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/rubbish-collector-app/api/v1',
-  cache: new InMemoryCache()
-});
 
 import Screens from "./navigation/Screens";
 import { Images, articles, argonTheme } from "./constants";
@@ -78,9 +74,7 @@ export default props => {
       <NavigationContainer>
         <GalioProvider theme={argonTheme}>
           <Block flex>
-            <ApolloProvider client={client}>
-              <Screens />
-            </ApolloProvider>
+            <Screens />
           </Block>
         </GalioProvider>
       </NavigationContainer>
@@ -90,3 +84,44 @@ export default props => {
   }
 }
 
+// export default class App extends React.Component {
+//   state = {
+//     isLoadingComplete: false
+//   };
+
+//   render() {
+//     if (!this.state.isLoadingComplete) {
+//       return (
+//         <AppLoading
+//           startAsync={this._loadResourcesAsync}
+//           onError={this._handleLoadingError}
+//           onFinish={this._handleFinishLoading}
+//         />
+//       );
+//     } else {
+//       return (
+//         <NavigationContainer>
+//           <GalioProvider theme={argonTheme}>
+//             <Block flex>
+//               <Screens />
+//             </Block>
+//           </GalioProvider>
+//         </NavigationContainer>
+//       );
+//     }
+//   }
+
+//   _loadResourcesAsync = async () => {
+//     return Promise.all([...cacheImages(assetImages)]);
+//   };
+
+//   _handleLoadingError = error => {
+//     // In this case, you might want to report the error to your error
+//     // reporting service, for example Sentry
+//     console.warn(error);
+//   };
+
+//   _handleFinishLoading = () => {
+//     this.setState({ isLoadingComplete: true });
+//   };
+// }

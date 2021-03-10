@@ -1,3 +1,6 @@
 module.exports ={
-  test:()=> 'Teting'
+  test:()=> 'Teting',
+
 }
+
+

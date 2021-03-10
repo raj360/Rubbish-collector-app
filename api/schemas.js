@@ -10,7 +10,7 @@ type Query{
 type Mutation{
   test:String!
   userSignUp(firstName:String!,lastName:String!,telephone:String!,email:String!,password:String!):User!
-  userSignIn(email:String!,telephone:String!,password:String!):User
+  userSignIn(email:String!,telephone:String!,password:String!):User!
   collectorSignUp(firstName:String!,lastName:String!,email:String!):Collector!
   collectorSignIn(email:String!,telephone:String!,password:String!):Collector!
   updateUser(userId:Int!,telephone:String!,district:String!,city:String!,longitude:Float,latitude:Float):User

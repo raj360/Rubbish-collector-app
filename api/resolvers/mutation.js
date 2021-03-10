@@ -81,6 +81,4 @@ collectorAddProfilePicture: async (parent,{userId,image},{model}) =>{
 },
 
 
-
-
 }

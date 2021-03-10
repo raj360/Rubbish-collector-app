@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "kasasiro app for clients",
-    "slug": "rubish collector app",
+    "name": "kasasiro for collectors",
+    "slug": "collectors",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -24,6 +24,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "This app allows users to easily locate rubbish collector vehicles to pickup their rubbish"
+    "description": "This app allows  rubbish collectors to locate clients  to pickup their rubbish"
   }
 }

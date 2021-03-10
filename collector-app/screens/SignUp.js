@@ -5,8 +5,6 @@ import { StyleSheet,
   Dimensions,
   StatusBar,
   Image,
-  TouchableHighlight,
-  TouchableOpacity,
   KeyboardAvoidingView
 } from 'react-native';
 
@@ -17,27 +15,14 @@ import { Button, Icon, Input } from "../components";
 
 const {width,height} = Dimensions.get("screen");
 
-
-
-const Profile = (props) => {
-
-  const [values, setValues] = React.useState({});
-
- const  handleTextChange = (prop) => (event) => {
-       setValues({ ...values, [prop]: event.target.value });
-     };
-
-
+const SignUp = (props) => {
   return (
       <Block flex middle  >
      <StatusBar hidden/>
      <Block flex middle >
        <Block flex style={styles.registerContainer}>
-                <Block flex={0.2} middle style={{marginBottom:'15%'}}>
-                   <Image source={Images.LocalProfilePicture} style={styles.logo} />
-                  <TouchableOpacity>
-                     <Image source={Images.CaptureImage} style={styles.button} />
-                  </TouchableOpacity>
+                <Block flex={0.2} middle>
+                   <Image source={Images.ArgonLogo} style={styles.logo} />
                 </Block>
                 <Block flex middle>
                   <KeyboardAvoidingView
@@ -45,35 +30,20 @@ const Profile = (props) => {
                     behavior="padding"
                     enabled
                   >
-                   
+                     <Block flex={0} middle>
+                    <Image
+                    source={{ uri: Images.ProfilePicture }}
+                    style={styles.avatar}
+                    />
+                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
-                        borderlessd
-                        name="firstName"
-                        onChange={ handleTextChange }
-                        placeholder="First Name"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.PRIMARY}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-
-                    
-                    </Block>
-
-                      <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
                         borderless
-                        placeholder="Last Name"
+                        placeholder="Full Name"
                         iconContent={
                           <Icon
                             size={16}
-                            color={argonTheme.COLORS.PRIMARY}
+                            color={argonTheme.COLORS.ICON}
                             name="hat-3"
                             family="ArgonExtra"
                             style={styles.inputIcons}
@@ -89,7 +59,7 @@ const Profile = (props) => {
                         iconContent={
                           <Icon
                             size={16}
-                            color={argonTheme.COLORS.PRIMARY}
+                            color={argonTheme.COLORS.ICON}
                             name="support"
                             family="ArgonExtra"
                             style={styles.inputIcons}
@@ -105,7 +75,7 @@ const Profile = (props) => {
                         iconContent={
                           <Icon
                             size={16}
-                            color={argonTheme.COLORS.PRIMARY}
+                            color={argonTheme.COLORS.ICON}
                             name="ic_mail_24px"
                             family="ArgonExtra"
                             style={styles.inputIcons}
@@ -121,7 +91,7 @@ const Profile = (props) => {
                         iconContent={
                           <Icon
                             size={16}
-                            color={argonTheme.COLORS.PRIMARY}
+                            color={argonTheme.COLORS.ICON}
                             name="padlock-unlocked"
                             family="ArgonExtra"
                             style={styles.inputIcons}
@@ -134,9 +104,21 @@ const Profile = (props) => {
                     <Block middle>
                       <Button color="primary" style={styles.createButton}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          Update profile
+                          CREATE ACCOUNT
                         </Text>
                       </Button>
+
+                        <Block  row style={styles.passwordCheck}>
+                        <Text size={16} color={argonTheme.COLORS.MUTED}>
+                          Already have an account:
+                        </Text>
+                        <Text 
+                        onPress={() => props.navigation.navigate('SignIn')}
+                        bold size={16} color={argonTheme.COLORS.SECONDARY}>
+                          {" "}
+                          SignIn
+                        </Text>
+                      </Block>
 
                     </Block>
                   </KeyboardAvoidingView>
@@ -148,7 +130,7 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+export default SignUp
 
 const styles = StyleSheet.create({
   registerContainer: {
@@ -187,20 +169,10 @@ const styles = StyleSheet.create({
   }
   ,
  logo:{
-  resizeMode:'contain',
-  width:'100%',
-  height:'100%',
-  borderRadius: 300,
-  marginTop: 100,
- 
-  
-  },button:{
-    resizeMode:'contain',
-    width:50,
-    height:50,
-    left:55,
-    bottom:30,
- zIndex: 2
+  resizeMode:'stretch',
+  width:250,
+  height:200,
+  marginTop:100
   }
 });
 
