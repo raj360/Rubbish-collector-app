@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView,TouchableOpacity } from 'react-native';
 import { Block, theme } from 'galio-framework';
-
-import { Card,RequestCollector} from '../components';
+import { Card,CollectionItem,RequestCollector} from '../components';
 import articles from '../constants/articles';
 
 const { width } = Dimensions.get('screen');
@@ -14,20 +13,24 @@ class Home extends React.Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
-          <RequestCollector/>
-          {/* <Card item={articles[0]}   /> mini small  */}
-          <Block flex row>
-            <Card item={articles[1]} style={styles.cards}  />
-            <Card item={articles[2]} styles={styles.cards} />
+
+          <RequestCollector {...this.props} />
+
+          <Block row>
+            <CollectionItem/>
+            <CollectionItem/>
           </Block>
 
-          <Block flex row>
-            <Card item={articles[1]} style={styles.cards}  />
-            <Card item={articles[2]} styles={styles.cards} />
+            <Block row>
+            <CollectionItem/>
+            <CollectionItem/>
           </Block>
 
-          {/* <Card item={articles[3]} horizontal / double view wide
-          <Card item={articles[4]} full /> full view image and text */}
+           <Block row>
+            <CollectionItem/>
+            <CollectionItem/>
+          </Block>
+
         </Block>
       </ScrollView>
     )

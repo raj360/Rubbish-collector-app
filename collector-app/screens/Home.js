@@ -17,6 +17,7 @@ class Home extends React.Component {
            
             <ScrollView 
             horizontal={true}
+             showsVerticalScrollIndicator={false}
             >
              
                   <ServiceCard/>

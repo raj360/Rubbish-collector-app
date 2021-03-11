@@ -17,7 +17,7 @@ const {width,height} = Dimensions.get("screen");
 
 const SignUp = (props) => {
   return (
-      <Block flex middle  >
+    <Block flex middle  >
      <StatusBar hidden/>
      <Block flex middle >
        <Block flex style={styles.registerContainer}>

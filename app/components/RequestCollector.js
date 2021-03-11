@@ -1,16 +1,21 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image,TouchableOpacity } from 'react-native';
 import {Block,Text,Theme,Button} from 'galio-framework';
 
 import {Images,argonTheme} from '../constants'
 
 
-const RequestCollector = () => {
+const RequestCollector = ({navigation}) => {
+
   return (
    <Block center flex>
-      <Image 
+      <TouchableOpacity
+      onPress={() => navigation.navigate('RequestCollector')}
+      >
+        <Image 
        source={Images.requestCollector}
       />
+      </TouchableOpacity>
       <Text bold color={argonTheme.COLORS.PRIMARY}>Request for a waste collector</Text>
 
     <Block middle>

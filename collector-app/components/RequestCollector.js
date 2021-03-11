@@ -8,7 +8,7 @@ const RequestCollector = () => {
    <Block center flex>
       <TouchableOpacity>
      <Block center middle>
-          <Image source={Images.requestCollector}
+         <Image source={Images.requestCollector}
       />
       <Text bold color={argonTheme.COLORS.PRIMARY}>Request for a waste collector</Text>
      </Block>

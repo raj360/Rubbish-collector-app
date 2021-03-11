@@ -18,6 +18,7 @@ import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import FindVet from '../screens/FindVet';
 import Chat from '../screens/Chat';
+import RequestCollector from '../screens/RequestCollector';
 
 // drawer
 import CustomDrawerContent from "./Menu";
@@ -38,7 +39,6 @@ const Tab = createBottomTabNavigator();
 function ChatStack(props) {
   return(
     <Stack.Navigator>
-       
       <Stack.Screen
       name = "Chat"
       component={Chat}
@@ -179,12 +179,12 @@ function MapViewStack(props){
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-         name="Find Vet"
+         name="Map"
         component={FindVet}
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Fine Your vet"
+              title="Locate track"
               back
               white
               search
@@ -222,8 +222,25 @@ function HomeStack(props) {
         }}
       />
 
-   
-      
+       <Stack.Screen
+        name="RequestCollector"
+        component={RequestCollector}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true
+        }}
+      />
+
+
       <Stack.Screen
         name="Pro"
         component={Pro}
@@ -296,7 +313,7 @@ function AppStack(props) {
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Articles" component={ArticlesStack} />
       <Drawer.Screen name="Chat" component={ChatStack} />
-      <Drawer.Screen name="Find Vet" component={MapViewStack} />
+      <Drawer.Screen name="Map" component={MapViewStack} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
       <Drawer.Screen name="Account" component={Register} />
       <Drawer.Screen name="SignIn" component={SignIn} />

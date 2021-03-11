@@ -7,7 +7,7 @@ import Input from './Input';
 import Switch from './Switch';
 import Select from './Select';
 import RequestCollector from './RequestCollector';
-
+import CollectionItem from './CollectionItem';
 
 export {
   Button,
@@ -18,5 +18,6 @@ export {
   Header,
   Switch, 
   Select,
-  RequestCollector
+  RequestCollector,
+  CollectionItem
 };

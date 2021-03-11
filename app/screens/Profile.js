@@ -35,7 +35,7 @@ const Profile = (props) => {
        <Block flex style={styles.registerContainer}>
                 <Block flex={0.2} middle style={{marginBottom:'15%'}}>
                    <Image source={Images.LocalProfilePicture} style={styles.logo} />
-                  <TouchableOpacity>
+                  <TouchableOpacity style={{left:50,top:-50}}>
                      <Image source={Images.CaptureImage} style={styles.button} />
                   </TouchableOpacity>
                 </Block>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
  avatar: {
     width: 100,
     height: 100,
-    borderRadius: 62,
+    borderRadius: 100,
     borderWidth: 0
   }
   ,
@@ -198,9 +198,7 @@ const styles = StyleSheet.create({
     resizeMode:'contain',
     width:50,
     height:50,
-    left:55,
-    bottom:30,
- zIndex: 2
+
   }
 });
 

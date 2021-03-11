@@ -16,6 +16,7 @@ const RecentActivities = () => {
 
       <ScrollView
       horizontal={true}
+       showsVerticalScrollIndicator={false}
       >
         <ServiceCardSmall />
         <ServiceCardSmall />

@@ -10,7 +10,7 @@ class DrawerItem extends React.Component {
   
   renderIcon = () => {
     const { title, focused } = this.props;
-
+    
     switch (title) {
       case "Home":
         return (
@@ -56,7 +56,7 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : argonTheme.COLORS.SECONDARY}
           />
         );
-      case "Find Vet":
+      case "Map":
         return (
            <Fontisto 
            name="doctor"
