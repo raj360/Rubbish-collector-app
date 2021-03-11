@@ -26,6 +26,7 @@ import CustomDrawerContent from "./Menu";
 // header for screens
 import { Icon, Header } from "../components";
 import { argonTheme, tabs } from "../constants";
+import LogOut from "../screens/LogOut";
 
 
 const { width } = Dimensions.get("screen");
@@ -228,10 +229,11 @@ function HomeStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title=""
+              title="Request collector"
               back
               white
-              transparent
+               bgColor={argonTheme.COLORS.SECONDARY}
+               bgColor={argonTheme.COLORS.SECONDARY}
               navigation={navigation}
               scene={scene}
             />
@@ -278,7 +280,6 @@ export default function OnboardingStack(props) {
 }
 
 
-
 function AppStack(props) {
   return (
     <Drawer.Navigator
@@ -319,6 +320,7 @@ function AppStack(props) {
       <Drawer.Screen name="SignIn" component={SignIn} />
       <Drawer.Screen name="SignUp" component={SignUp} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
+      <Drawer.Screen name="Logout" component={LogOut} />
     
     </Drawer.Navigator>
   );

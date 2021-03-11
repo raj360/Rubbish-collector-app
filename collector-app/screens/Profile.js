@@ -27,14 +27,13 @@ const Profile = (props) => {
        setValues({ ...values, [prop]: event.target.value });
      };
 
-
   return (
       <Block flex middle  >
      <StatusBar hidden/>
      <Block flex middle >
        <Block flex style={styles.registerContainer}>
                 <Block flex={0.2} middle style={{marginBottom:'15%'}}>
-                   <Image source={Images.LocalProfilePicture} style={styles.logo} />
+                   <Image source={Images.Amos} style={styles.logo} />
                   <TouchableOpacity>
                      <Image source={Images.CaptureImage} style={styles.button} />
                   </TouchableOpacity>
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
   resizeMode:'contain',
   width:'100%',
   height:'100%',
-  borderRadius: 300,
+  borderRadius: 200,
   marginTop: 100,
  
   

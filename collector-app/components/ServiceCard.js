@@ -15,7 +15,7 @@ const ServiceCard = () => {
           <Text size={16} style={styles.close}>X</Text>
         </Block>
         </TouchableOpacity>
-       <Image source={Images.ProfileBackground} style={styles.image}  />
+       <Image source={Images.Amos2} style={styles.image}  />
       </Block>
 
       <Block style={styles.details} >

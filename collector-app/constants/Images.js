@@ -11,6 +11,8 @@ const ArgonLogo = require("../assets/icon.png");
 const iOSLogo = require("../assets/images/ios.png");
 const androidLogo = require("../assets/images/android.png");
 const requestCollector = require('../assets/requestCollector.png')
+const Amos = require('../assets/amos.jpg')
+const Amos2 =require('../assets/amos2.jpg')
 // internet images
 
 
@@ -46,5 +48,7 @@ export default {
   iOSLogo,
   androidLogo,
   requestCollector,
-  LocalProfilePicture
+  LocalProfilePicture,
+  Amos,
+  Amos2,
 };

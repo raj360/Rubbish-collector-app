@@ -11,7 +11,8 @@ class Home extends React.Component {
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.articles}>
+        contentContainerStyle={styles.articles}
+        >
         <Block flex>
 
           <RequestCollector {...this.props} />

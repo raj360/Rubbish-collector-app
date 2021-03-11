@@ -12,6 +12,8 @@ const iOSLogo = require("../assets/images/ios.png");
 const androidLogo = require("../assets/images/android.png");
 const requestCollector = require('../assets/requestCollector.png')
 const greyBackground = require('../assets/grey_background.png')
+const Amos = require('../assets/amos.jpg')
+const Amos2 = require('../assets/amos2.jpg')
 // internet images
 
 
@@ -48,5 +50,7 @@ export default {
   androidLogo,
   requestCollector,
   LocalProfilePicture,
-  greyBackground
+  greyBackground,
+  Amos,
+  Amos2
 };

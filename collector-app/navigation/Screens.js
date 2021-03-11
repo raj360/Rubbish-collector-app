@@ -1,6 +1,5 @@
 import React from "react";
 import { Easing, Animated, Dimensions } from "react-native";
-
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -25,6 +24,7 @@ import CustomDrawerContent from "./Menu";
 // header for screens
 import { Icon, Header } from "../components";
 import { argonTheme, tabs } from "../constants";
+import LogOut from '../screens/Logout';
 
 
 const { width } = Dimensions.get("screen");
@@ -301,6 +301,7 @@ function AppStack(props) {
       <Drawer.Screen name="SignIn" component={SignIn} />
       <Drawer.Screen name="SignUp" component={SignUp} />
       <Drawer.Screen name="Elements" component={ElementsStack} />
+      <Drawer.Screen name="Logout" component={LogOut} />
     
     
     </Drawer.Navigator>

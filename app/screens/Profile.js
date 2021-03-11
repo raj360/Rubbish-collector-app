@@ -34,7 +34,7 @@ const Profile = (props) => {
      <Block flex middle >
        <Block flex style={styles.registerContainer}>
                 <Block flex={0.2} middle style={{marginBottom:'15%'}}>
-                   <Image source={Images.LocalProfilePicture} style={styles.logo} />
+                   <Image source={Images.Amos2} style={styles.logo} />
                   <TouchableOpacity style={{left:50,top:-50}}>
                      <Image source={Images.CaptureImage} style={styles.button} />
                   </TouchableOpacity>

@@ -89,7 +89,7 @@ class DrawerItem extends React.Component {
           color={focused ? "white" : "rgba(0,0,0,0.5)"}
         />;
 
-      case "Log out":
+      case "Logout":
         return <Icon
          name="padlock-unlocked"
           family="ArgonExtra"

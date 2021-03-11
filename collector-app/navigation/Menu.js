@@ -44,7 +44,7 @@ function CustomDrawerContent({ drawerPosition, navigation, profile, focused, sta
             </Block>
             <DrawerCustomItem title="Rate us" navigation={navigation} />
             <DrawerCustomItem title="SignIn" navigation={navigation} />
-            <DrawerCustomItem title="Log out" navigation={navigation} />
+            <DrawerCustomItem title="Logout" navigation={navigation} />
         </ScrollView>
       </Block>
     </Block>
